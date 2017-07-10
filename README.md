@@ -15,7 +15,7 @@
 - 工程化开发
 
 	- chorme dev tool
-	- 工程化
+	- 为什么需要工程化
 	- nodejs, npm 和 yarn
 	- package.json
 	- 版本管理工具 svn 和 git
