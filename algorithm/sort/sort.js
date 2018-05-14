@@ -16,6 +16,4 @@ exports.bubble = (origin, asc = true) => {
 }
 
 
-exports.quick = (origin, asc = true) => {
-    
-}
+exports.quick = require('./quicksort').default;
