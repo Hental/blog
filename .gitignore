@@ -2,3 +2,5 @@
 *.log
 __*/
 __*
+node_modules/
+.vscode/
