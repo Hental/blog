@@ -2,6 +2,7 @@ function swap(arr, i, j) {
   [arr[i], arr[j]] = [arr[j], arr[i]];
 }
 
+// 最基本的实现
 exports.quickSort = function quickSort(origin) {
   function r(arr) {
     if (arr.length <= 1) {
@@ -26,6 +27,7 @@ exports.quickSort = function quickSort(origin) {
   return r(origin);
 }
 
+// 原地交换，空间复杂 O(nlogn) => O(1)
 exports.quickSort2 = function quickSort2(origin) {
   function r(arr, startIndex, endIndex) {
     if (endIndex - startIndex <= 1) {
@@ -56,6 +58,7 @@ exports.quickSort2 = function quickSort2(origin) {
   return origin;
 }
 
+// 优化
 exports.quickSort3 = function quickSort3(origin) {
   function r(arr, head, tail) {
     if (head >= tail) {
@@ -90,9 +93,3 @@ exports.quickSort3 = function quickSort3(origin) {
   r(origin, 0, origin.length - 1);
   return origin;
 }
-
-console.log(
-  exports.quickSort3(
-    [7, 12, 6, 78, 22, 23, 11, 0, 8, 22, 99, 10, 33]
-  ),
-)
