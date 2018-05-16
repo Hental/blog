@@ -8,11 +8,9 @@ describe('sort', () => {
     arr = [7, 12, 6, 78, 22, 23, 11, 0, 8, 22, 99, 10, 33];
   });
 
-  it('bubble sort', () => {
-    expect(sort.bubble(arr)).toEqual(sortedArr);
+  Object.entries(sort).forEach(([name, fn]) => {
+    it(`${name} sort`, () => {
+      expect(fn(arr)).toEqual(sortedArr);
+    });
   });
-
-  it('quick sort', () => {
-    expect(sort.quick(arr)).toEqual(sortedArr);
-  })
 })
