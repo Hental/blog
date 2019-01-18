@@ -1,5 +1,25 @@
 # 周刊推荐
 
+## 2019-01-21
+
+[#96](https://github.com/CtripFE/fe-weekly/issues/96)
+
+## [你不知道的Node.js性能优化](https://zhuanlan.zhihu.com/p/50055740)
+
+d2 前端大会上分享过的内容，质量不错，涉及 Node 版本、GC、JSON 序列化、ES6、Steam、扩展。
+
+## [面试官问你斐波那契数列的时候不要高兴得太早](https://zhuanlan.zhihu.com/p/54378423)
+
+解决的方法有很多，那个最好？
+
+## [为 JavaScript 开发人员准备的 Dart 参考教程](https://zhuanlan.zhihu.com/p/54949074)
+
+flutter 已近发布了1.0，是时候开始学习了。
+
+## [Designing the Flexbox Inspector](https://hacks.mozilla.org/2019/01/designing-the-flexbox-inspector/)
+
+firefox 65 新增 flex inspector 工具，可以方便的查看 flex 布局信息。
+
 ## 2019-01-14
 
 [#94](https://github.com/CtripFE/fe-weekly/issues/94)
