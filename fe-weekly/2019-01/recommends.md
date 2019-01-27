@@ -1,5 +1,37 @@
 # 周刊推荐
 
+## 2019-01-28
+
+### [[译] 2019 前端性能优化年度总结 - 第一部分](https://juejin.im/post/5c4418006fb9a049c043545e)
+
+涉及了前端优化的多个方面，目前只翻译了第一部分和第二部分，第一部分主要讲解如何建立评估规范。
+
+### [portable node.js](https://github.com/ehmicky/portable-node-guide?utm_source=ESnextNews.com&utm_medium=Weekly+Newsletter&utm_campaign=2019-01-22)
+
+讲解了 NodeJS 的很多易错的小细节，非常适合刚开始上手 NodeJS 的同学。
+
+### [前端tree组件，10000个树节点，从12.19s到0.49s](https://zhuanlan.zhihu.com/p/55528376)
+
+使用堆栈替代递归。
+
+## 2019-01-21
+
+### [你不知道的Node.js性能优化](https://zhuanlan.zhihu.com/p/50055740)
+
+d2 前端大会上分享过的内容，质量不错，涉及 Node 版本、GC、JSON 序列化、ES6、Steam、扩展。
+
+### [面试官问你斐波那契数列的时候不要高兴得太早](https://zhuanlan.zhihu.com/p/54378423)
+
+解决的方法有很多，那个最好？
+
+### [为 JavaScript 开发人员准备的 Dart 参考教程](https://zhuanlan.zhihu.com/p/54949074)
+
+flutter 已近发布了1.0，是时候开始学习了。
+
+### [Designing the FlexBox Inspector](https://hacks.mozilla.org/2019/01/designing-the-flexbox-inspector/)
+
+firefox 65 新增 flex inspector 工具，可以方便的查看 flex 布局信息。
+
 ## 2019-01-14
 
 [#94](https://github.com/CtripFE/fe-weekly/issues/94)
