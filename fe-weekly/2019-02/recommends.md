@@ -1,5 +1,25 @@
 # 周刊推荐
 
+## 2019-02-19
+
+[#99](https://github.com/CtripFE/fe-weekly/issues/99)
+
+### [TypeScript](https://blogs.msdn.microsoft.com/typescript/2019/01/31/announcing-typescript-3-3/)
+
+TypeScript 3.3 发布，提升了联合类型的提示。
+
+### [[译] 理解 React Hooks](https://juejin.im/post/5be98a87f265da616e4bf8a4)
+
+React 16.8 已经正式支持 hooks 了，或许函数组件会替代掉 Class 组件。
+
+### [一文看完 HTTP3 的演化历程](https://www.infoq.cn/article/IgME_4ebP3d46m3tHbaT)
+
+介绍了 http 协议制订的流程。
+
+### [Structurae: Data Structures for High Performance JavaScript](https://blog.usejournal.com/structurae-data-structures-for-high-performance-javascript-9b7da4c73f8)
+
+虽然 JavaScript 不适合计算任务，但是在某些场景下是不错的选择。
+
 ## 2019-02-04
 
 [#98](https://github.com/CtripFE/fe-weekly/issues/98)
