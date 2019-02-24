@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-02-25
+
+[#100](https://github.com/CtripFE/fe-weekly/issues/99)
+
+### [泥瓦匠聊并发编程：线程与多线程必知必会（基础篇](https://zhuanlan.zhihu.com/p/33616143)
+
+现代开发，多线程和多进程是必不可少的。
+
+### [Node.js环境性能监控](https://juejin.im/post/5c71324b6fb9a049d37fbb7c)
+
+性能优化从性能监控开始。
+
+### [6 天面试、斩获 6 家硅谷巨头 Offer，我是如何做到的？](https://www.infoq.cn/article/gkUZZ_qQ6gCuoqpSAcw3)
+
+经济寒冬中的求职技巧。
+
 ## 2019-02-19
 
 [#99](https://github.com/CtripFE/fe-weekly/issues/99)
