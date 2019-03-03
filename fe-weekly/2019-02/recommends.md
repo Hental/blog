@@ -1,5 +1,19 @@
 # 周刊推荐
 
+## 2019-03-04
+
+### [我在淘宝做前端的这三年 — 第一年](https://zhuanlan.zhihu.com/p/55272391)
+
+成功既离不开公司项目的锻炼，也需要自我的奋斗。
+
+### ([翻译] 你到底需不需要redux-反方观点)[https://zhuanlan.zhihu.com/p/57423535]
+
+技术都是为了解决问题的，技术选型时要依据不同的场景，选取适合的技术。
+
+### [让 CPU 告诉你硬盘和网络到底有多慢](https://mp.weixin.qq.com/s/DiP84yhdHFTgYVGBf6nGvg)
+
+从 CPU 的角度看，IO 和网络确实是一个系统的性能瓶颈。
+
 ## 2019-02-25
 
 [#100](https://github.com/CtripFE/fe-weekly/issues/99)
