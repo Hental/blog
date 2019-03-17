@@ -1,12 +1,20 @@
 # 周刊推荐
 
-##
+## 2019-03-18
+
+[#103](https://github.com/CtripFE/fe-weekly/issues/103)
+
+### [Node.js 微服务实践(一) ](https://mp.weixin.qq.com/s/1hJnshUvtZdlzq1Dsp2Ogw)
+
+微服务是为什么，为什么选择用微服务。
+
+### [ 探索 EventEmitter 在 Node.js 中的实现](https://juejin.im/post/5c6f7342f265da2de04ab9ca)
+
+学习代码的最快的方式就是自己学着造个轮子。
 
 ### [Threads in Node 10.5.0: a practical intro](https://medium.com/dailyjs/threads-in-node-10-5-0-a-practical-intro-3b85a0a3c953)
 
-### [JavaScript 常见设计模式](https://juejin.im/post/5c80f57f51882532cd57b64d)
-
-代码没有银弹，要依据不同的场景结合使用不同的设计模式。
+NodeJs 也支持 worker thread。
 
 ## 2019-03-11
 
