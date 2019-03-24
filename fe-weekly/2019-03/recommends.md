@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-03-15
+
+[#104](https://github.com/CtripFE/fe-weekly/issues/104)
+
+### [Node 案发现场揭秘 —— 正确打开 Chrome devtools](https://zhuanlan.zhihu.com/p/60174870)
+
+工欲善其事，必先利其器，善用 chrome devtools 能加速开发。
+
+### [HTTP的连接管理](https://github.com/Pines-Cheng/blog/issues/42)
+
+连接管理是一个 HTTP 的关键话题，从 http1 的持久连接 到 http2 的多路复用。
+
+### [React is Slow, React is Fast: Optimizing React Apps in Practice](https://medium.com/dailyjs/react-is-slow-react-is-fast-optimizing-react-apps-in-practice-394176a11fba)
+
+React 应用可能很慢，也可以很快，这取决于你的优化。
+
 ## 2019-03-18
 
 [#103](https://github.com/CtripFE/fe-weekly/issues/103)
