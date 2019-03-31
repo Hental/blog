@@ -4,15 +4,15 @@
 
 [#105](https://github.com/CtripFE/fe-weekly/issues/104)
 
-[[译] 网速敏感的视频延迟加载方案](https://github.com/CtripFE/fe-weekly/issues/104)
+### [[译] 网速敏感的视频延迟加载方案](https://github.com/CtripFE/fe-weekly/issues/104)
 
 渐进增强的加载背景视频，能给与用于一个绝佳的体验。
 
-[如何在浏览器不崩溃的情况下过滤 200 万行数据？](https://www.infoq.cn/article/CBx*Ke3jafIVm1vDRKZh)
+### [如何在浏览器不崩溃的情况下过滤 200 万行数据？](https://www.infoq.cn/article/CBx*Ke3jafIVm1vDRKZh)
 
 如何在不爆堆内存的情况下，实现 200万数据的搜索。
 
-[Implementing Quicksort in JavaScript](https://medium.com/predict/implementing-quicksort-in-javascript-1874569ffaea)
+### [Implementing Quicksort in JavaScript](https://medium.com/predict/implementing-quicksort-in-javascript-1874569ffaea)
 
 快速排序的 JS 实现。
 
