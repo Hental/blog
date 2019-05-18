@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-05-20
+
+[#113](https://github.com/CtripFE/fe-weekly/issues/113)
+
+### [什么便捷、功能和安全，Chrome一把梭](https://mp.weixin.qq.com/s/3ezqYqumuUzzTVA9uJfkQw)
+
+来自谷歌 I/O 大会的 Chrome 的新特性。
+
+### [除代码之外，程序员还有哪些能力也非常的关键？](https://mp.weixin.qq.com/s/tblYdNLixwQa-rLSeKPbAA)
+
+程序员不应该只会写代码，职业规划、自我成长、投资同样重要。
+
+### [12 张图搞懂链表相关算法](https://mp.weixin.qq.com/s/KkAk1LetE4nWBlO0bDiZVA)
+
+学习算法是一个枯燥的过程，图片能够更加直观的解释和展示算法结构。
+
 ## 2019-05-13
 
 [#112](https://github.com/CtripFE/fe-weekly/issues/112)
