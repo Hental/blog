@@ -1,6 +1,20 @@
 # 周刊推荐
 
-https://juejin.im/post/5cdc3dc2e51d453b6c1d9d3a
+## 2018-05-27
+
+[#114](https://github.com/CtripFE/fe-weekly/issues/114)
+
+### [useHooks~小窍门](https://zhuanlan.zhihu.com/p/66170210)
+
+hook 是 React 16.8.0 新增的功能，为函数式组件提供了状态管理，本文通过一些实际的代码例子讲解了 Hook 在项目中的使用。
+
+### [Trie 树与不可变数据结构](https://zhuanlan.zhihu.com/p/63207283)
+
+不可变对象是指数据在创建之后它的状态不可变化，数据只读不可写，每次属性变更都会生成一个新的对象，immutableJS 便是通过不可变数据结构实现的。
+
+### [V8 release v7.5](https://v8.dev/blog/v8-release-75)
+
+v8 7.5 发布，提升了对 WebAssembly 的支持，实现了 [Numeric separators](https://github.com/tc39/proposal-numeric-separator) 特性。
 
 ## 2019-05-20
 
