@@ -1,6 +1,22 @@
 # 周刊推荐
 
-## 2018-06-03
+## 2019-6-10
+
+[#116](https://github.com/CtripFE/fe-weekly/issues/116)
+
+### [如何提升JSON.stringify()的性能？](https://zhuanlan.zhihu.com/p/68183339)
+
+JSON stringify 在前端需要序列化对象时常常会用到，提升 stringify 的性能能很好的提升应用的整体性能。
+
+### [Typescript 3.5 发布](https://devblogs.microsoft.com/typescript/announcing-typescript-3-5/)
+
+Typescript 3.5 带来了 Omit 辅助类型，union type 更好的提示，方便的抽出类型等特性。
+
+### [前端开发 20 年变迁史 ](https://mp.weixin.qq.com/s/yNg7Q0XNLJMnqffTIJhNUg)
+
+不知不觉，前端已有 20 年历史了，前端工程师也从切页面进化到小程序，NodeJS 多个领域。
+
+## 2019-06-03
 
 [#115](https://github.com/CtripFE/fe-weekly/issues/115)
 
