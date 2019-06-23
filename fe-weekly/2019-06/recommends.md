@@ -1,5 +1,17 @@
 # 周刊推荐
 
+## 2019-06-24
+
+[118](https://github.com/CtripFE/fe-weekly/issues/118)
+
+### [利用资源预加载提升网站性能](https://zhuanlan.zhihu.com/p/69991624)
+
+通过 header 里面的 meta 指令预先加载一部分资源，以此提升网站性能。
+
+### [玉伯：从前端到体验，如何把格局做大](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247491552&idx=1&sn=044da1b480812638510cc84d71402e27)
+
+前端能做的事不仅仅是页面，更多的应该思考业务，在做之前想好怎么做和为什么这么做。
+
 ## 2019-6-10
 
 [#116](https://github.com/CtripFE/fe-weekly/issues/116)
