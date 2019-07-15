@@ -1,6 +1,22 @@
 # 周刊推荐
 
-## 2019-07-01
+## 2019-07-15
+
+[121](https://github.com/CtripFE/fe-weekly/issues/121)
+
+### [Lodash 库爆出严重安全漏洞，波及 400 万 + 项目](https://www.infoq.cn/article/k7C-ZvXKOHh284ToEy9K)
+
+lodash 的 defaultsDeep， merge 方法可能修改原型链，造成原型污染，可以升级到最新版本以解决该问题。
+
+### [A Look at JavaScript’s Future](https://www.toptal.com/javascript/predicting-javascript-future)
+
+JavaScript 的世界仍然在高速发展，ES6、TypeScript、 WebAssembly 带来了更好的性能和更安全的代码，WebXR、Server-side JavaScript、NodeJS 让前端的领域更加广阔。
+
+### [用JavaScript带你体验V8引擎解析字符串过程](https://zhuanlan.zhihu.com/p/73013409)
+
+本篇文章讲解了 V8 引擎如何进行 AST，把字符转化成一个个实际的对象。
+
+## 2019-07-08
 
 [120](https://github.com/CtripFE/fe-weekly/issues/120)
 
@@ -17,6 +33,8 @@ SQL 执行偶尔很慢可能是在同步 redo log 或者等待锁的释放，一
 模块支持: 浏览器实现了原生的 ES6 module 和 dynamic import，以及 built-in Module(stage 1);
 ES8: 异步迭代,对象的展开,Promise prototype 增加 finally 方法，更好的正则支持;
 ES9: Array prototype 增加 flat 和 flatMap 方法, Object 增加 fromEntries 方法,通过一个 key-value 数组构建对象, String prototype 增加 trimStart 和 trimEnd 方法,去除空格,以及更好的 utf-8 支持.
+
+## 2019-07-01
 
 [119](https://github.com/CtripFE/fe-weekly/issues/119)
 
