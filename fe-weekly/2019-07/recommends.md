@@ -1,5 +1,29 @@
 # 周刊推荐
 
+## 2019-07-22
+
+[122](https://github.com/CtripFE/fe-weekly/issues/121)
+
+### [精读《前端未来展望》](https://zhuanlan.zhihu.com/p/73765645)
+
+前端的领域已经不局限于切图，工程化，组件化，可视化，AI，云服务，Serverless 都是前端未来的一部分。
+
+### [科普一下 CORS 以及如何节省一次 OPTIONS 请求](https://zhuanlan.zhihu.com/p/70032617)
+
+CORS 问题虽然可以通过 http header 解决，但是大部分情况下会发起 2 次请求，消耗掉两个 TTL，严重影响性能，ajax 服务最好和和主站部署在同一个域名下。
+
+### [What’s Deno, and how is it different from Node.js?](https://blog.logrocket.com/what-is-deno/)
+
+Deno 自问世以来就受到很多的关注，现在已经初步可用，但实际上 deno 和 NodeJS 的设计思路和方向是并不相同的，本文带你了解 deno 和 NodeJS 的差异。
+
+### [轻量可嵌入的 QuickJS 引擎重磅开源，它会是下一个 V8 吗？](https://www.infoq.cn/article/Qzh19YqpqFoSS6_SOlV9) & [Facebook 发布全新 JS 引擎！专注提高 React Native 应用的性能](https://www.infoq.cn/article/8JEVNZvTrj_e1oJwo5vL)
+
+facebook 和 FFmpeg 作者 Charlie Gordon 分别发布 2 个新的 JS 引擎，效果目前不清楚，但是多些选择总是好事。
+
+### [BAT 程序员们常用的开发工具](https://www.infoq.cn/article/yeQU4f_BujTYCMxaXNFc)
+
+工欲善其事必先利其器，一个优秀的程序员除了代码写得好，善于利用各种开发工具同样可以事半功倍。
+
 ## 2019-07-15
 
 [121](https://github.com/CtripFE/fe-weekly/issues/121)
