@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-08-12
+
+[125](https://github.com/CtripFE/fe-weekly/issues/125)
+
+### [抖音研发实践：基于二进制文件重排的解决方案 APP启动速度提升超15% ](https://mp.weixin.qq.com/s/Drmmx5JtjG3UtTFksL6Q8Q)
+
+通过重排二进制文件，减少 Page Fault，获得了约 15 % 的启动时间减少。
+
+### [JavaScrip中的“观察者模式”](https://zhuanlan.zhihu.com/p/76039838)
+
+JavaScript 中存在大量的异步场景，非常适合“观察者模式”，[RxJS](https://cn.rx.js.org/) 便是基于观察者模式。
+
+### [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
+
+React Hooks 是个好东西，但是它只能管理组件的 state，而 Redux 是管理整个应用的 state。
+
 ## 2019-08-05
 
 [124](https://github.com/CtripFE/fe-weekly/issues/124)
