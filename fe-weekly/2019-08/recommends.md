@@ -1,5 +1,25 @@
 # 周刊推荐
 
+## 2019-08-19
+
+[126](https://github.com/CtripFE/fe-weekly/issues/126)
+
+### [「2019 JSConf.Hawaii - Brie.Bunge」大规模应用 TypeScript](https://zhuanlan.zhihu.com/p/78724003)
+
+Airbnb 前端团队在全面使用 TypeScript 后，错误率下降了 15%，迁移也是逐步迁移的，值得借鉴。
+
+### [用JavaScript带你体验V8引擎解析标识符](https://zhuanlan.zhihu.com/p/77332861)
+
+对于 V8,即使一个简单的  `var` 字符的解析，也涉及到很多逻辑。
+
+### [React v16.9.0 and the Roadmap Update](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
+
+React 16.9 发布，带来了 React.Profiler，便于性能测试; `componentWillMount`、`componentWillReceiveProps` 和 `componentWillUpdate` 添加了 unsafe 提示。
+
+### [wallace-cli](https://github.com/bartveneman/wallace-cli)
+
+一个可以 css 的命令行分析工具，可以显示有多少条规则、选择器、文件大小等等。
+
 ## 2019-08-12
 
 [125](https://github.com/CtripFE/fe-weekly/issues/125)
