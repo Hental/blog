@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-08-26
+
+[127](https://github.com/CtripFE/fe-weekly/issues/127)
+
+### [SwiftUI：Better apps. Less code.](https://zhuanlan.zhihu.com/p/78450750)
+
+SwiftUI 是 Apple 为苹果开发者提供的 UI 框架，采用了声明式 UI + 响应式数据的设计，能够实时预览。
+
+### [渲染流水线中的光栅化（一）](https://zhuanlan.zhihu.com/p/78758247)
+
+光栅化是图形渲染流水线中的一个重要环节，但是不同浏览器渲染引擎使用的光栅化策略并不一样，本文主要讨论各种不同的光栅化策略和它们各自的优劣。
+
+### [[译] 愿未来没有 Webpack](https://juejin.im/post/5d4bcdb7e51d453b386a62c6)
+
+虽然 webpack 带来了很多的特性，但是也带来了很多的复杂性，是否能够在支持 ES Module 的浏览器中减低打包的复杂性。
+
 ## 2019-08-19
 
 [126](https://github.com/CtripFE/fe-weekly/issues/126)
