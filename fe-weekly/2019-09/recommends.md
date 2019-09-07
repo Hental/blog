@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-09-09
+
+[129](https://github.com/CtripFE/fe-weekly/issues/129)
+
+### [VSCode原理解析 - 断点调试 ](https://fed.taobao.org/blog/2019/08/15/vscode-debug-source-analyse/)
+
+类似 Language Server Protocol, vscode 通过 DAP(Debug Adapter Protocol) 协议，支持对不同的语言进行 debug。
+
+### [The story of a V8 performance cliff in React](https://v8.dev/blog/react-cliff)
+
+React 在新的 Profile Devtool 中使用了大量的小数点记录性能时间，导致 v8 变得很慢。
+
+### [微软提出 CSS Modules V1 ：通过 import 语句将 CSS 模块导入到组件中](https://www.infoq.cn/article/tfu5VFMYSxt89KOLNLp6)
+
+在 ES module 直接引入 css，并作为一个 CSSStyleSheet 对象，极大的方便了组件的开发。
+
 ## 2019-09-02
 
 [128](https://github.com/CtripFE/fe-weekly/issues/128)
