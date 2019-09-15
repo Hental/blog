@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-09-16
+
+[130](https://github.com/CtripFE/fe-weekly/issues/130)
+
+### [深入typescript类型系统：polymorphism 101](https://zhuanlan.zhihu.com/p/82056426)
+
+在 TypeScript 中常常使用 union type 实现函数重载，然后通过 control flow analysis，将 union type narrowing 到某个具体的类型。
+
+### [红黑树，超强动静图详解，简单易懂](https://zhuanlan.zhihu.com/p/79980618)
+
+要想工资高，还是得学好算法。
+
+### [Using Proxy and Virtual DOM to Build Your Own Framework](https://medium.com/@toastui/using-proxy-and-virtual-dom-to-build-your-own-framework-43ce9ddec81d)
+
+自己动手造轮子也是一种快速学习的方式。
+
 ## 2019-09-09
 
 [129](https://github.com/CtripFE/fe-weekly/issues/129)
