@@ -1,5 +1,27 @@
 # 周刊推荐
 
+## 2019-09-30
+
+[132](https://github.com/CtripFE/fe-weekly/issues/132)
+
+### [[译]亚马逊 CTO 的“中台论”](https://mp.weixin.qq.com/s/1hBylosHWDo0y3TK0hNYig)
+
+## 2019-09-23
+
+[131](https://github.com/CtripFE/fe-weekly/issues/131)
+
+### [Hello! Umi UI ](https://mp.weixin.qq.com/s/5Ezo9_1JZACmywJcPBbGDA)
+
+Umi UI 是 antd 团体提供的管理本地 antd pro 项目的可视化工具，能方便的进行配置和管理。
+
+### [重构：改善饿了么交易系统的设计思路](https://zhuanlan.zhihu.com/p/83388356)
+
+软件设计没有银弹，需要我们从业务和实际需求出发，不断的思考和改进。
+
+### [什么是真正的10x工程师？ ](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247492501&idx=1&sn=efb7e795fbefe3bf1ec5e71772736109)
+
+编程不仅仅是写代码，作为一名工程师，更多的是解决问题，擅长和他人交流，能够带动团队一起成长的人。
+
 ## 2019-09-16
 
 [130](https://github.com/CtripFE/fe-weekly/issues/130)
