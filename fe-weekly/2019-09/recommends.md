@@ -6,13 +6,31 @@
 
 ### [[译]亚马逊 CTO 的“中台论”](https://mp.weixin.qq.com/s/1hBylosHWDo0y3TK0hNYig)
 
+中台是前端未来的方向，利用微服务，自动 ci 和无服务器模式能够快速提高软件的交付速度和质量。
+
+### [蚂蚁金服褚霸：敲最牛的代码，骑最野的车丨二叉树视频](https://mp.weixin.qq.com/s/Gi9II3UwNRVWcYEdttlljw)
+
+成绩不是唯一的标准，重要的是保持好奇心。
+
+### [Announcing TypeScript 3.7 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/)
+
+TypeScript 3.7 即将发布，支持 Optional Chaining 和 Nullish Coalescing 语法，增加断言函数，支持类型嵌套。
+
+### [Vue 3.0 源码开放，看看都有哪些新特性](https://juejin.im/post/5d996f5ae51d4578162ad469)
+
+国庆期间，尤雨溪大大发布了 vue 3.0 的源代码，建议在阅读源码前阅读下 [function api rfc](https://github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md)。
+
+### [Improve Your JavaScript Knowledge By Reading Source Code](https://www.smashingmagazine.com/2019/07/javascript-knowledge-reading-source-code/)
+
+学习都是从模仿开始，优秀的源代码都是他人不断优化的结晶，学习这些源代码能帮助我们在巨人的肩膀上快速成长。
+
 ## 2019-09-23
 
 [131](https://github.com/CtripFE/fe-weekly/issues/131)
 
-### [Hello! Umi UI ](https://mp.weixin.qq.com/s/5Ezo9_1JZACmywJcPBbGDA)
+### [React's useEffect and useRef Explained for Mortals](https://leewarrick.com/blog/react-use-effect-explained/)
 
-Umi UI 是 antd 团体提供的管理本地 antd pro 项目的可视化工具，能方便的进行配置和管理。
+useEffect 的 effect 意味着组件会在组件之外产生影响，方便组件进行网络请求或者访问 dom 元素，但是 useEffect 又会产生闭包陷阱，闭包引用的值都是 old value，可以通过 setState 的回调函数获取到最新值或者使用 useRef。
 
 ### [重构：改善饿了么交易系统的设计思路](https://zhuanlan.zhihu.com/p/83388356)
 
