@@ -8,9 +8,6 @@
 
 中台是前端未来的方向，利用微服务，自动 ci 和无服务器模式能够快速提高软件的交付速度和质量。
 
-### [蚂蚁金服褚霸：敲最牛的代码，骑最野的车丨二叉树视频](https://mp.weixin.qq.com/s/Gi9II3UwNRVWcYEdttlljw)
-
-成绩不是唯一的标准，重要的是保持好奇心。
 
 ### [Announcing TypeScript 3.7 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/)
 
