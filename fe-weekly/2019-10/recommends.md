@@ -1,5 +1,25 @@
 # 周刊推荐
 
+## 2019-10-21
+
+[134](https://github.com/CtripFE/fe-weekly/issues/134)
+
+### [Chrome Devtools 高级调试指南（新）](https://mp.weixin.qq.com/s/N5dU_s3jRSH13oQghO90lg)
+
+工欲善其事，善用 chrome detool，能帮助我们更好的排查问题。
+
+### [axios 是如何封装 HTTP 请求的 ](https://mp.weixin.qq.com/s/rilUedkk13J2TlHwbTiWDg)
+
+axios 是一个前后端都可以用的网络请求库，本文带你了解 axios 如何实现。
+
+### [小程序底层实现原理及一些思考](https://zhuanlan.zhihu.com/p/81775922)
+
+小程序出现已经有 2 年多了，当我们自己去实现一个小程序引擎，我们该如何开发？
+
+### [Top-level await](https://v8.dev/features/top-level-await)
+
+V8 引擎已实现 top-level 的 await, 无需包装成 iife, [TC39 proposal](https://github.com/tc39/proposal-top-level-await#use-cases)
+
 ## 2019-10-14
 
 [133](https://github.com/CtripFE/fe-weekly/issues/133)
