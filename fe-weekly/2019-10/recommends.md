@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-10-28
+
+[135](https://github.com/CtripFE/fe-weekly/issues/135)
+
+### [React 中的状态自动保存（KeepAlive）](https://zhuanlan.zhihu.com/p/82700889)
+
+状态缓存是应用中十分常见的需求，vue 中有 keep-alive 标签，但是 React 原生不支持这个功能，需要手动实现。
+
+### [【第1747期】webpack 5 之持久化缓存指南 ](https://mp.weixin.qq.com/s/oB5eYax_NndcM5IinPgzNQ)
+
+webpack5 带来了持久化缓存，能有效的提升编译的速度。
+
+### [Node.js 12 to LTS and Node.js 13 is here!](https://medium.com/@nodejs/node-js-12-to-lts-and-node-js-13-is-here-e28d6a4a2bd)
+
+Node.js 13 发布，Node.js 12 成为 LTS 版本。
+
 ## 2019-10-21
 
 [134](https://github.com/CtripFE/fe-weekly/issues/134)
