@@ -221,6 +221,19 @@ it('should handle multiple effects', () => {
 
 Proxy 可以劫持对象，自定义对象的行为，如属性查找，赋值，枚举，函数调用等。
 
+### Map
+
+```ts
+/**
+  * 存储依赖关系
+  * key: 对象的 prop
+  * value: effect list
+  */
+export type Dep = Set<ReactiveEffect>
+export type KeyToDepMap = Map<any, Dep>
+export const targetMap = new WeakMap<any, KeyToDepMap>()
+```
+
 ## computed
 
 计算属性是一种特殊的 effect，只有当取值的时候才计算。
