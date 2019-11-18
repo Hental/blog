@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-11-18
+
+[139](https://github.com/CtripFE/fe-weekly/issues/139)
+
+### [精读《React Conf 2019 - Day1》](https://juejin.im/post/5dbf749df265da4d560910b8)
+
+前端世界正变得越来越复杂，这届 React Conf 也在探索各个方面，能让我们看到前端更多的可能性。
+
+### [The state of JavaScript frameworks security report 2019](https://snyk.io/wp-content/uploads/snyk-javascript_report_2019.pdf)
+
+随着网络逐渐成为人们生活的一部分，安全成为无法忽视的主要问题。
+
+### [谷歌推出新提案Portals：Web上的无缝跳转体验](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247493063&idx=2&sn=a6b738efe6c579c620a38bcbc7c26848)
+
+Portal 是一个新的 HTML 标签，用以提升 web 不同页面之间的跳转体验。
+
 ## 2019-11-11
 
 [138](https://github.com/CtripFE/fe-weekly/issues/138)
