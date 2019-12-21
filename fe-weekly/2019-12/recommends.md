@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-12-23
+
+[144](https://github.com/CtripFE/fe-weekly/issues/144)
+
+### [一个老程序员的30年生涯回顾（译文）](http://www.ruanyifeng.com/blog/2019/12/30-years-software-career.html)
+
+在为了挣钱而工作和因为兴趣而编程之间寻求自己的人生。
+
+### [Preact（React）核心原理详解](https://zhuanlan.zhihu.com/p/97047014)
+
+由于 React 的源码的庞大和晦涩，难以阅读。但是在爱好“造轮子”的前端界，我们会发现一些和 React 有着近乎相同的框架，本文的主人公 Preact 也是其一，但是它相对简练的代码，使得我们更好地去学习和研究它的原理。
+
+### [冰与火之歌：JavaScript 的困境与挑战](https://www.infoq.cn/article/3P1Watv3Iys9LJkAHZaW?utm_source=weibo&utm_medium=infoq&utm_campaign=newinfoq&utm_content=1220bing)
+
+JavaScript 是非常成功的语言，但到现在是一个转折点，我们要停下来看一看：它再往下怎么样发展才会更好。
+
 ## 2019-12-16
 
 [143](https://github.com/CtripFE/fe-weekly/issues/143)
