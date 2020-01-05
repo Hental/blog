@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2019-12-30
+
+[145](https://github.com/CtripFE/fe-weekly/issues/145)
+
+### [7 insights from the State of JS 2019](https://changelog.com/posts/7-insights-from-the-state-of-js-2019)
+
+在 2019 年：TypeScript 被更多的人接受，Web Components 也在被大家缓慢接受，另一方面 WebAssembly 仍未普及，Svelte 是社区新星，而 Meteor 难以吸引开发者的兴趣，Electron 虽然被抱怨但是很流行，也有很多好的 JavaScript 播客出现。
+
+### [React Motion 缓动函数剖析](https://zhuanlan.zhihu.com/p/20458251)
+
+本文以 React Motion 实现原理为例，介绍一种通用的物理缓动的实现方法。
+
+### [Feature watch: ECMAScript 2020](https://2ality.com/2019/12/ecmascript-2020.html?utm_source=ESnextNews.com&utm_medium=Weekly+Newsletter&utm_campaign=2019-12-24)
+
+2020 即将来临，先看下 2020 年 ECMAScript 会有那些新特性。
+
 ## 2019-12-23
 
 [144](https://github.com/CtripFE/fe-weekly/issues/144)
