@@ -1,5 +1,21 @@
 # 周刊推荐
 
+## 2020-01-06
+
+[146](https://github.com/CtripFE/fe-weekly/issues/146)
+
+### [基于浏览器的实时构建探索之路](https://mp.weixin.qq.com/s/Gl2Yc34cpdbFIRjL-qYwGg)
+
+随着前端的快速发展和上云的趋势，前端现在如此复杂的 bundler 和包管理可能已经不符合这种趋势，需要更灵活的包管理机制。
+
+### [记一次egg-init bug修复过程](https://zhuanlan.zhihu.com/p/96208304)
+
+排查 bug 也是编程重要的一环，即使在使用 egg 这样成熟的框架，也会遇到一些奇怪的 bug.
+
+### [从 V8 源码理解 Javascript 函数是一等公民](https://zhuanlan.zhihu.com/p/101132637)
+
+本文从 V8 源码的角度分析为什么 Javascript 语言中的函数是一等公民。
+
 ## 2019-12-30
 
 [145](https://github.com/CtripFE/fe-weekly/issues/145)
