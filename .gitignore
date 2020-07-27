@@ -4,3 +4,6 @@ __*/
 __*
 node_modules/
 .vscode/
+dist/
+lib/
+es/
