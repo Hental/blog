@@ -145,6 +145,7 @@ module.exports = {
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[tj]s?(x)",
     "<rootDir>/leetcode/solutions/*.ts",
+    "<rootDir>/interview/*.[tj]s",
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
