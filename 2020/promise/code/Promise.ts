@@ -1,32 +1,26 @@
-import { error } from 'console';
-
 const PromiseStatus = {
   PENDING: Symbol('pending'),
   RESOLVE: Symbol('resolve'),
   REJECT: Symbol('reject'),
 }
 
-type PromiseTask<T> = (resolve: (value: T) => void, reject: (reason: any) => void) => void;
+type PromiseTask<T> = (resolve: (value?: T) => void, reject: (reason?: any) => void) => void;
 
-type PromiseFullFilledCallback<T> = (value: T) => void;
-
-type PromiseRejectCallback = (reason: any) => void;
-
-class MyPromise<T> {
+export class MyPromise<T> {
   private status: Symbol;
   private value: T | undefined;
 
-  private onfulfilled: Array<(value: T) => void> = [];
-  private onrejected:  Array<(reason: any) => void> = [];
+  private onfulfilled: Array<(value?: T) => void> = [];
+  private onrejected:  Array<(reason?: any) => void> = [];
 
   constructor(task: PromiseTask<T>) {
     this.status = PromiseStatus.PENDING;
 
-    const resolve = (value: T) => {
+    const resolve = (value?: T) => {
       if (this.status !== PromiseStatus.PENDING) {
 
       }
-      
+
       this.status === PromiseStatus.RESOLVE;
       this.value = value;
 
@@ -59,8 +53,8 @@ class MyPromise<T> {
   }
 
   then<TResult1 = T, TResult2 = never>(
-    onfulfilled?: ((value: T) => TResult1 | MyPromise<TResult1>),
-    onrejected?: ((reason: any) => TResult2 | MyPromise<TResult2>)
+    onfulfilled?: ((value?: T) => TResult1 | MyPromise<TResult1>),
+    onrejected?: ((reason?: any) => TResult2 | MyPromise<TResult2>)
   ): MyPromise<TResult1 | TResult2> {
     const nextPromise = new MyPromise<TResult1 | TResult2>((resolve, reject) => {
       this.onfulfilled.push(value => {
@@ -89,7 +83,7 @@ class MyPromise<T> {
             reject(error);
           }
         } else {
-          reject(error);
+          reject(reason);
         }
       })
     });
