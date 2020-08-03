@@ -21,7 +21,6 @@ export class GraphEdge extends Array {
 export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
   constructor() {
     super();
-    // this.vertices = new Map();
   }
 
   addVertex(vertex: GraphVertex) {
@@ -33,15 +32,19 @@ export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
   addEdge(edge: GraphEdge) {
     const [vertex1, vertex2] = edge;
 
-    if (!this.has(vertex1)) {
-      this.set(vertex1, new Map());
+    let vertex1Edges = this.get(vertex1);
+    if (!vertex1Edges) {
+      vertex1Edges = new Map();
+      this.set(vertex1, vertex1Edges);
     }
-    (this.get(vertex1) as Map<GraphVertex, GraphEdge>).set(vertex2, edge);
+    vertex1Edges.set(vertex2, edge);
 
-    if (!this.has(vertex2)) {
-      this.set(vertex2, new Map());
+    let vertex2Edges = this.get(vertex2);
+    if (!vertex2Edges) {
+      vertex2Edges = new Map();
+      this.set(vertex2, vertex2Edges);
     }
-    (this.get(vertex2) as Map<GraphVertex, GraphEdge>).set(vertex1, edge);
+    vertex2Edges.set(vertex1, edge);
   }
 
   /**
