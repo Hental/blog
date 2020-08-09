@@ -6,118 +6,72 @@
 
 // @lc code=start
 function isMatch(input: string, pattern: string): boolean {
-  const tokens = parse(pattern)
-  return isMatchTokens(input, tokens);
-};
+  const dp: boolean[][] = Array.from({ length: input.length + 1 }).map(() => Array(pattern.length + 1).fill(false));
 
-function isMatchTokens(input: string, tokens: Token[]): boolean {
-  let inputIndex = 0;
+  dp[0][0] = true;
 
-  for (let tokenIndex = 0; tokenIndex < tokens.length; tokenIndex++) {
-    const token = tokens[tokenIndex];
-    switch (token.type) {
-      case 'char':
-      case 'any':
-        if (input[inputIndex] === undefined) {
-          return false;
-        }
-        if (!isMatchChar(input[inputIndex], token)) {
-          return false;
-        }
-        inputIndex += 1;
-        break;
-      case 'multi':
-        let restString = input.substr(inputIndex);
-        let matchStringList: string[] = []
-        for (let i = 0; i < restString.length; i++) {
-          const char = restString[i];
-          if (isMatchChar(char, token.token)) {
-            matchStringList.push(char);
-          } else {
-            break;
-          }
-        }
-        while (matchStringList.length) {
-          // console.log('match string with: ', matchStringList.join(""));
-          // console.log('try match sub: ', input.substr(matchStringList.length + inputIndex));
-          if (isMatchTokens(input.substr(matchStringList.length + inputIndex), tokens.slice(tokenIndex + 1))) {
-            return true;
-          }
-          matchStringList.pop();
-        }
-        return isMatchTokens(input.substr(inputIndex), tokens.slice(tokenIndex + 1));
+  for (let i = 0; i < pattern.length; i++) {
+    if (pattern[i] === '*' && dp[0][i - 1]) {
+      dp[0][i + 1] = true;
     }
   }
 
-  return inputIndex === input.length;
-}
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < pattern.length; j++) {
+      const p = pattern[j];
+      const char = input[i];
 
-function isMatchChar(char: string, token: Token): boolean {
-  switch (token.type) {
-    case 'char':
-      return token.char === char;
-    case 'any':
-      return true;
-  }
-  return true;
-}
+      if (p === '.' || p === char) {
+        dp[i + 1][j + 1] = dp[i][j];
+      }
 
-type Token =
-  | {
-    type: 'char';
-    char: string;
-  }
-  | {
-    type: 'any';
-  }
-  | {
-    type: 'multi';
-    token: Token;
-  }
-
-function parse(pattern: string): Token[] {
-  const rules: Token[] = [];
-  for (const char of pattern) {
-    switch (char) {
-      case '.':
-        rules.push({ type: 'any' });
-        break;
-      case '*':
-        rules.push({ type: 'multi', token: rules.pop() as Token });
-        break;
-      default:
-        rules.push({ type: 'char', char });
+      // like ".*" or "a*"
+      if (p === '*') {
+        // match empty
+        if (pattern[j - 1] !== '.' && pattern[j - 1] !== char) {
+          dp[i + 1][j + 1] = dp[i + 1][j - 1];
+        } else {
+          dp[i + 1][j + 1] = dp[i + 1][j] || dp[i][j + 1] || dp[i + 1][j - 1];
+        }
+      }
     }
   }
-  return rules;
+
+  console.log(dp);
+  return !!dp[input.length][pattern.length];
 }
+
 // @lc code=end
 
-describe('10.regular-expression-match', () => {
-  it('match by char', () => {
-    expect(isMatch('aa', 'a')).toBeFalsy();
+describe("10.regular-expression-match", () => {
+  it("match by char", () => {
+    expect(isMatch("aa", "a")).toBeFalsy();
   });
 
   it('"*" match zero or more preceding element', () => {
-    expect(isMatch('', 'a*')).toBeTruthy();
-    expect(isMatch('aaaab', 'a*b')).toBeTruthy();
-    expect(isMatch('aaaab', 'a*c')).toBeFalsy();
-    expect(isMatch('b', 'a*b')).toBeTruthy();
+    expect(isMatch("", "a*")).toBeTruthy();
+    expect(isMatch("aaaab", "a*b")).toBeTruthy();
+    expect(isMatch("aaaab", "a*c")).toBeFalsy();
+    expect(isMatch("b", "a*b")).toBeTruthy();
   });
 
   it('"." match any element', () => {
-    expect(isMatch('abc', 'a.c')).toBeTruthy();
-    expect(isMatch('bc', '..')).toBeTruthy();
-    expect(isMatch('bc', '.')).toBeFalsy();
+    expect(isMatch("abc", "a.c")).toBeTruthy();
+    expect(isMatch("bc", "..")).toBeTruthy();
+    expect(isMatch("bc", ".")).toBeFalsy();
   });
 
   it('use both "." & "*"', () => {
-    expect(isMatch('aaaaaaaaaaaaab', 'a*a*a*a*a*a*a*a*a*a*c')).toBeTruthy();
-    expect(isMatch('ab', '.*..c*')).toBeTruthy();
-    expect(isMatch('a', '.*..a*')).toBeFalsy();
-    expect(isMatch('aaa', 'ab*ac*a')).toBeTruthy();
-    expect(isMatch('acdaacd', 'a.*cd*.')).toBeTruthy();
-    expect(isMatch('aab', 'c*a*b')).toBeTruthy();
-    expect(isMatch('mississippi', 'mis*is*p*.')).toBeFalsy();
-  })
+    expect(isMatch("a", "ab*a")).toBeFalsy();
+    expect(isMatch("ab", ".*..c*")).toBeTruthy();
+    expect(isMatch("a", ".*..a*")).toBeFalsy();
+    expect(isMatch("a", "..a*")).toBeFalsy();
+    expect(isMatch("a", ".a*")).toBeTruthy();
+    expect(isMatch("abcd", "d*")).toBeFalsy();
+    expect(isMatch("aaa", "ab*ac*a")).toBeTruthy();
+    expect(isMatch("acdaacd", "a.*cd*.")).toBeTruthy();
+    expect(isMatch("aab", "c*a*b")).toBeTruthy();
+    expect(isMatch("mississippi", "mis*is*ip*.")).toBeTruthy();
+    expect(isMatch("mississippi", "mis*is*p*.")).toBeFalsy();
+  });
 });
