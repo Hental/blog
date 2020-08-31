@@ -17,8 +17,7 @@ function lengthOfLongestSubstring(s: string): number {
 
     if (charPrevIndex !== undefined && charPrevIndex >= start) {
       maxSize = Math.max(maxSize, i - start);
-      let idx = map.get(char) as number;
-      start = idx + 1;
+      start = charPrevIndex + 1;
     }
 
     map.set(char, i);
