@@ -2,6 +2,13 @@
  * @lc app=leetcode id=41 lang=typescript
  *
  * [41] First Missing Positive
+ *
+ * target value should be "1 ~ nums.length + 1"
+ * max: nums.length + 1, min: 1
+ * so we loop array, if value over the range, ignore, else mark special index
+ * then we loop again, find not mark value, if find, return index + 1, else return max
+ * to mark value but not chang origin value, we change value from positive to negative
+ * to avoid miss origin negative value, we should first set origin negative value to max
  */
 
 // @lc code=start
