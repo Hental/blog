@@ -58,8 +58,6 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
-    "global/**/*",
-    "middleware/**/*",
-    // "porto/**/*",
+    "string-template/**/*"
   ]
 }

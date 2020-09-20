@@ -1,4 +1,6 @@
-window.myWindowProp;
+import './declare';
+
+window.myWindowProp();
 
 global.myGlobalProp;
 

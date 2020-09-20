@@ -7,7 +7,9 @@
 1. koa 中间件在 Context 新增一个属性。
 
 ```ts
-declare module '
+declare module '' {
+
+}
 
 ```
 

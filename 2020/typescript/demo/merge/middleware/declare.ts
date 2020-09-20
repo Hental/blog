@@ -7,3 +7,5 @@ declare module 'http' {
     myResponseProp: string;
   }
 }
+
+export { };

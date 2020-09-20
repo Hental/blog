@@ -12,4 +12,7 @@ declare global {
   type MyGlobalType = {};
 }
 
+global.myGlobalProp = true;
+window.myWindowProp = () => { };
+
 export {}

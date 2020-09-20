@@ -1,12 +1,12 @@
-type AvailableAresURL<T> = {
+type AvailableAresUrl<T> = {
   [Alias in keyof T]: Alias extends string
-  ? keyof T[Alias] extends string
-  ? `module://${Alias}/${keyof T[Alias]}`
-  : never
-  : never;
+    ? keyof T[Alias] extends string
+    ? `module://${Alias}/${keyof T[Alias]}`
+    : never
+    : never;
 }[keyof T];
 
-type AresModuleUrl<Path, Prefix extends string = '/<group>/<module>'> = Path extends string ? `https://<host>/modules${Prefix}/${Path}` : string;
+type ConcatAresUrl<Path, Prefix extends string = '/<group>/<module>'> = Path extends string ? `https://<host>/modules${Prefix}/${Path}` : string;
 
 type GetAresModulePathPrefix<Modules, Alias extends keyof Modules> = Modules[Alias] extends string
   ? Modules[Alias] extends `${infer Group}@${infer Package}:${infer Version}`
@@ -18,14 +18,14 @@ type RealUrlString<Manifest, Modules, Url> = Url extends `module://${infer Alias
   ? Alias extends keyof Manifest
   ? Path extends keyof Manifest[Alias]
   ? Alias extends keyof Modules
-  ? AresModuleUrl<Manifest[Alias][Path], GetAresModulePathPrefix<Modules, Alias>>
-  : AresModuleUrl<Manifest[Alias][Path]>
+  ? ConcatAresUrl<Manifest[Alias][Path], GetAresModulePathPrefix<Modules, Alias>>
+  : ConcatAresUrl<Manifest[Alias][Path]>
   : string
   : string
   : string;
 
-interface GetUrl<M = Record<string, Record<string, string>>, C = Record<string, string>> {
-  <P extends AvailableAresURL<M>>(path: P): RealUrlString<M, C, P>;
+export interface GetUrl<M = Record<string, Record<string, string>>, C = Record<string, string>> {
+  <P extends AvailableAresUrl<M>>(path: P): RealUrlString<M, C, P>;
 }
 
 
