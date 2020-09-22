@@ -23,13 +23,18 @@ export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
     super();
   }
 
-  addVertex(vertex: GraphVertex) {
-    if (!this.has(vertex)) {
-      this.set(vertex, new Map());
+  addVertex(vertexOrLabel: GraphVertex | string) {
+    let v = vertexOrLabel instanceof GraphVertex ? vertexOrLabel : new GraphVertex(vertexOrLabel);
+    if (!this.has(v)) {
+      this.set(v, new Map());
     }
+    return this;
   }
 
-  addEdge(edge: GraphEdge) {
+  addEdge(vertexA: GraphVertex, vertexB: GraphVertex): this;
+  addEdge(edge: GraphEdge): this;
+  addEdge(edgeOrVertexA: GraphEdge | GraphVertex, vertexB?: GraphVertex) {
+    const edge = edgeOrVertexA instanceof GraphEdge ? edgeOrVertexA : new GraphEdge(edgeOrVertexA, vertexB as GraphVertex);
     const [vertex1, vertex2] = edge;
 
     let vertex1Edges = this.get(vertex1);
@@ -45,6 +50,8 @@ export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
       this.set(vertex2, vertex2Edges);
     }
     vertex2Edges.set(vertex1, edge);
+
+    return this;
   }
 
   /**
@@ -74,6 +81,10 @@ export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
    */
   vertices(): IterableIterator<GraphVertex> {
     return this.keys();
+  }
+
+  get vertexSize() {
+    return this.size;
   }
 
   /**
@@ -109,5 +120,30 @@ export class Graph extends Map<GraphVertex, Map<GraphVertex, GraphEdge>> {
       throw new Error(`Vertex(${vertex.label}) not exist in graph`);
     }
     return map.values();
+  }
+
+   /**
+   * 获取一个顶点的度
+   */
+  getVertexDegree(vertex: GraphVertex): number {
+    const map = this.get(vertex);
+    if (!map) {
+      throw new Error(`Vertex(${vertex.label}) not exist in graph`);
+    }
+    return map.size;
+  }
+
+  clone() {
+    const g = new Graph();
+
+    for (const v of this.vertices()) {
+      g.addVertex(v);
+    }
+
+    for (const e of this.edges()) {
+      g.addEdge(e);
+    }
+
+    return g;
   }
 }
