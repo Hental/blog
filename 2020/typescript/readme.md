@@ -6,7 +6,11 @@
 
 1. 在请求的 request 对象上新增一个属性。
 
+[shark-js-sdk](http://git.dev.sh.ctripcorp.com/shark/shark-js-sdk/blob/master/index.d.ts)
+
 ```ts
+import { Context, Next } from 'koa';
+
 declare module 'http' {
   interface IncomingMessage {
     myRequestProp: number;
@@ -15,6 +19,12 @@ declare module 'http' {
   interface ServerResponse {
     myResponseProp: string;
   }
+}
+
+export async function middleware(ctx: Context, next: Next) { 
+  ctx.req.myRequestProp = 1;
+  ctx.res.myResponseProp = '';
+  await next();
 }
 ```
 
@@ -36,7 +46,7 @@ declare global {
 }
 ```
 
-3. 扩展原型。
+3. 扩展原型对象。
 
 ```ts
 // class.ts
@@ -133,8 +143,6 @@ request({ method: 'GET', url: '' });
 
 ## 类型保护
 
-### 类型收缩（Type Narrowing）
-
 当一个值有多种类型，在不同的 `if/else` 的分支下处理时可以依据 *type guard* 把类型收缩到某个确定的类型。
 
 ### typeof & instanceof
@@ -179,6 +187,8 @@ function doSome(item: Car | Bike) {
 
 ### union type
 
+Case: 接口返回不同类型的数据
+
 ```ts
 interface HotelItem {
   type: 'hotel';
@@ -211,6 +221,46 @@ export function test(item: Item) {
 }
 ```
 
+Case: 多种状态
+
+```ts
+type NetworkLoadingState = {
+  state: "loading";
+};
+
+type NetworkFailedState = {
+  state: "failed";
+  code: number;
+};
+
+type NetworkSuccessState = {
+  state: "success";
+  response: {
+    title: string;
+    duration: number;
+    summary: string;
+  };
+};
+
+type NetworkState =
+  | NetworkLoadingState
+  | NetworkFailedState
+  | NetworkSuccessState;
+
+function handleState(state: NetworkState) {
+  switch (state.state) {
+    case 'failed':
+      console.log(state.code);
+      break;
+    case 'loading':
+      break;
+    case 'success':
+      console.log(state.response);
+      break;
+  }
+}
+```
+
 ## 类型推导
 
 ### 泛型
@@ -220,7 +270,7 @@ export function test(item: Item) {
 3. 类型可以重复利用。
 4. 对类型进行编程。
 
-比如有 2 个接口，一个获取用户信息，一个获取酒店信息。
+Example: 比如有 2 个接口，一个获取用户信息，一个获取酒店信息。
 
 ```ts
 export interface GetUserResponse {
@@ -334,7 +384,7 @@ let wrapped2 = wrapAsyncFunction(() => ''); // error: Type 'string' is not assig
 ```
 
 ```ts
-type FnKey<T> = {
+type FindFuncProperty<T> = {
   [P in keyof T]: T[P] extends (...args: any[]) => any ? P : never;
 }[keyof T];
 
@@ -347,10 +397,12 @@ type MockFunction<R, Args extends any[]> = {
 }
 
 export interface SpyOn {
-  <T, K extends FnKey<T>>(target: T, key: K): MockFunction<ReturnType<T[K]>, Parameters<T[K]>>;
+  <T, K extends FindFuncProperty<T>>(target: T, key: K): MockFunction<ReturnType<T[K]>, Parameters<T[K]>>;
 }
 
-let spyOn: SpyOn;
+let spyOn: SpyOn = () => {
+  throw new Error('not implementation');
+};
 let obj = {
   foo: 'bar',
   bool: true,
@@ -458,82 +510,9 @@ type Test = ParseStringParams<'{foo} + {bar}'>
 
 [doc](https://www.typescriptlang.org/docs/handbook/utility-types.html)
 
-```ts
-/**
- * Make all properties in T optional
- */
-type Partial<T> = {
-    [P in keyof T]?: T[P];
-};
+## Tool
 
-/**
- * Make all properties in T required
- */
-type Required<T> = {
-    [P in keyof T]-?: T[P];
-};
-
-/**
- * Make all properties in T readonly
- */
-type Readonly<T> = {
-    readonly [P in keyof T]: T[P];
-};
-
-/**
- * From T, pick a set of properties whose keys are in the union K
- */
-type Pick<T, K extends keyof T> = {
-    [P in K]: T[P];
-};
-
-/**
- * Construct a type with a set of properties K of type T
- */
-type Record<K extends keyof any, T> = {
-    [P in K]: T;
-};
-
-/**
- * Exclude from T those types that are assignable to U
- */
-type Exclude<T, U> = T extends U ? never : T;
-
-/**
- * Extract from T those types that are assignable to U
- */
-type Extract<T, U> = T extends U ? T : never;
-
-/**
- * Construct a type with the properties of T except for those in type K.
- */
-type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
-
-/**
- * Exclude null and undefined from T
- */
-type NonNullable<T> = T extends null | undefined ? never : T;
-
-/**
- * Obtain the parameters of a function type in a tuple
- */
-type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never;
-
-/**
- * Obtain the parameters of a constructor function type in a tuple
- */
-type ConstructorParameters<T extends new (...args: any) => any> = T extends new (...args: infer P) => any ? P : never;
-
-/**
- * Obtain the return type of a function type
- */
-type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
-
-/**
- * Obtain the return type of a constructor function type
- */
-type InstanceType<T extends new (...args: any) => any> = T extends new (...args: any) => infer R ? R : any;
-```
+1. [soa-type](http://npm.release.ctripcorp.com/package/@ctrip/soa-type)
 
 ## References
 
@@ -541,3 +520,4 @@ type InstanceType<T extends new (...args: any) => any> = T extends new (...args:
 2. [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
 3. [Template String Type](https://github.com/microsoft/TypeScript/pull/40336)
 4. [infer](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#type-inference-in-conditional-types)
+5. [Type Gymnastics](https://github.com/g-plane/type-gymnastics)

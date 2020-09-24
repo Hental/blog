@@ -1,7 +1,7 @@
 type InferReducerEvent<T> = T extends (state: any, action: infer A) => any ? A : never;
 type InferReducerState<T> = T extends (state: infer S, action: any) => any ? S : never;
 
-export interface Store<S, R> {
+export interface Store<S, R extends Reducer<any>> {
   subscribe(cb: () => void): void;
   dispatch(event: InferReducerEvent<R>): void;
   getState(): S;
@@ -37,9 +37,12 @@ import React from 'react';
 type InferProps<C> = C extends React.ComponentType<infer P> ? P : any;
 type InferStoreState<S extends Store<any, any>> = S extends Store<infer State, any> ? State : never;
 
+// filter function type props
 type EventProps<P> = {
   [K in keyof P]: P[K] extends (...args: any[]) => any ? P[K] : never;
 };
+
+// filter not function type props
 type NotEventProps<P> = {
   [K in keyof P]: P[K] extends (...args: any[]) => any ? never : P[K];
 };

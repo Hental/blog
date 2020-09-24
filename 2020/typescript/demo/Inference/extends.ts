@@ -18,7 +18,7 @@ let wrapped2 = wrapAsyncFunction(() => ''); // error: Type 'string' is not assig
 
 
 // SpyOn
-type FnKey<T> = {
+type FindFuncProperty<T> = {
   [P in keyof T]: T[P] extends (...args: any[]) => any ? P : never;
 }[keyof T];
 
@@ -31,10 +31,12 @@ type MockFunction<R, Args extends any[]> = {
 }
 
 export interface SpyOn {
-  <T, K extends FnKey<T>>(target: T, key: K): MockFunction<ReturnType<T[K]>, Parameters<T[K]>>;
+  <T, K extends FindFuncProperty<T>>(target: T, key: K): MockFunction<ReturnType<T[K]>, Parameters<T[K]>>;
 }
 
-let spyOn: SpyOn;
+let spyOn: SpyOn = () => {
+  throw new Error('not implementation');
+};
 let obj = {
   foo: 'bar',
   bool: true,
