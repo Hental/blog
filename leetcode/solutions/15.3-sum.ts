@@ -4,16 +4,29 @@
  * [15] 3Sum
  */
 
+import { log } from 'console';
+
 // @lc code=start
 function threeSum(nums: number[]): number[][] {
   if (nums.length < 3) {
     return [];
   }
 
-  const results = new Map<string, number[]>();
+  nums.sort();
 
-  for (let i = 0; i < nums.length; i++) {
+  const results: number[][] = [];
+
+  for (let i = 0; i < nums.length - 2; i++) {
     const num = nums[i];
+
+    if (num > 0) {
+      break;
+    }
+
+    if (i > 0 && num === nums[i - 1]) {
+      continue;
+    }
+
     const restTwo = 0 - num;
 
     const map = new Map<number, number>();
@@ -22,21 +35,29 @@ function threeSum(nums: number[]): number[][] {
       const rest = restTwo - item;
 
       if (map.has(rest)) {
-        const result = [num, rest, item].sort();
-        const key = result.join(',');
-        results.set(key, result);
+        const result = [num, rest, item];
+        results.push(result);
+
+        while (j < nums.length && nums[j + 1] === num) {
+          j++;
+        }
       }
 
       map.set(item, j);
     }
   }
 
-  return Array.from(results.values());
+  return results;
 };
 
 // @lc code=end
 
 describe('15.3-sum', () => {
+
+  it('exist twice', () => {
+    expect([-2, 0, 0, 2, 2]).toEqual([[-2, 0, 2]]);
+  });
+
   it('solution', () => {
     expect([-1,0,1,2,-1,-4]).toEqual([[-1,-1,2],[-1,0,1]]);
   });
