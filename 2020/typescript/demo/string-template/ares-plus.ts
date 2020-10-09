@@ -1,10 +1,10 @@
-type AvailableAresUrl<T> = {
-  [Alias in keyof T]: Alias extends string
-    ? keyof T[Alias] extends string
-    ? `module://${Alias}/${keyof T[Alias]}`
+type AvailableAresUrl<Manifest> = {
+  [Alias in keyof Manifest]: Alias extends string
+    ? keyof Manifest[Alias] extends string
+    ? `module://${Alias}/${keyof Manifest[Alias]}`
     : never
     : never;
-}[keyof T];
+}[keyof Manifest];
 
 type ConcatAresUrl<Path, Prefix extends string = '/<group>/<module>'> = Path extends string ? `https://<host>/modules${Prefix}/${Path}` : string;
 

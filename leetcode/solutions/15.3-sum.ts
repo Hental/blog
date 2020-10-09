@@ -4,7 +4,6 @@
  * [15] 3Sum
  */
 
-import { log } from 'console';
 
 // @lc code=start
 function threeSum(nums: number[]): number[][] {

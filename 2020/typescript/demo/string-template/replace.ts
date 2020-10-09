@@ -17,8 +17,8 @@ export interface ReplaceFn {
 // test
 let fn: ReplaceFn = (() => { }) as any;
 fn('arg {foo} + {bar}', {
-  foo: 'xxx',
-  bar: 'xxx'
+  foo: 'foo',
+  bar: 'bar',
 });
 
 type Test = ParseStringParams<'{foo} + {bar}'>

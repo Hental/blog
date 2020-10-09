@@ -7,3 +7,9 @@ declare module './class' {
 }
 
 MyClass.prototype.extendFn = v => v;
+
+declare global {
+  interface Array<T> {
+    mySort(): T[];
+  }
+}

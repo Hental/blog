@@ -1,13 +1,13 @@
-type AvailableAresURL<T> = {
-  [Alias in keyof T]: Alias extends string
-    ? keyof T[Alias] extends string
-    ? `module://${Alias}/${keyof T[Alias]}`
+type AvailableAresURL<Manifest> = {
+  [Alias in keyof Manifest]: Alias extends string
+    ? keyof Manifest[Alias] extends string
+    ? `module://${Alias}/${keyof Manifest[Alias]}`
     : never
     : never;
-}[keyof T];
+}[keyof Manifest];
 
-export interface GetUrl<M = Record<string, Record<string, string>>> {
-  <P extends AvailableAresURL<M>>(path: P): string;
+export interface GetUrl<Manifest = Record<string, Record<string, string>>> {
+  <P extends AvailableAresURL<Manifest>>(path: P): string;
 }
 
 

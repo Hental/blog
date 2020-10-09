@@ -1,4 +1,4 @@
-import { Graph, GraphEdge, GraphVertex } from './graph';
+import { Graph, GraphEdge, GraphVertex } from "./graph";
 
 function createGraph(edges: Array<[string, string]>) {
   const g = new Graph();
@@ -7,7 +7,7 @@ function createGraph(edges: Array<[string, string]>) {
     let v = vertices.get(label) || new GraphVertex(label);
     vertices.set(label, v);
     return v;
-  }
+  };
 
   for (const edge of edges) {
     g.addEdge(edge.map(getVertex));
@@ -20,18 +20,18 @@ function createGraph(edges: Array<[string, string]>) {
 }
 
 function verticesLabel(vertices: Iterable<GraphVertex>) {
-  return [...vertices].map(v => v.label).sort();
+  return [...vertices].map((v) => v.label).sort();
 }
 
 function edgesLabel(edges: Iterable<GraphEdge>) {
   return [...edges].map(verticesLabel);
 }
 
-describe('graph', () => {
-  it('add vertex & edge', () => {
+describe("graph", () => {
+  it("add vertex & edge", () => {
     const g = new Graph();
-    const vertexA = new GraphVertex('a');
-    const vertexB = new GraphVertex('b');
+    const vertexA = new GraphVertex("a");
+    const vertexB = new GraphVertex("b");
     const edge = new GraphEdge(vertexA, vertexB);
     g.addEdge(edge);
     const edges = [...g.edges()];
@@ -43,10 +43,10 @@ describe('graph', () => {
     expect(vertices.includes(vertexB)).toBeTruthy();
   });
 
-  it('remove edge ref', () => {
+  it("remove edge ref", () => {
     const g = new Graph();
-    const vertexA = new GraphVertex('a');
-    const vertexB = new GraphVertex('b');
+    const vertexA = new GraphVertex("a");
+    const vertexB = new GraphVertex("b");
     const edge = new GraphEdge(vertexA, vertexB);
     g.addEdge(edge);
     expect([...g.edges()].length).toBe(1);
@@ -58,28 +58,30 @@ describe('graph', () => {
 
   it('"getOutVertices" return vertex neighbor vertices', () => {
     const { graph, getVertex } = createGraph([
-      ['a', 'b'],
-      ['a', 'c'],
-      ['a', 'd'],
-      ['b', 'e'],
-      ['c', 'f'],
-      ['f', 'd'],
+      ["a", "b"],
+      ["a", "c"],
+      ["a", "d"],
+      ["b", "e"],
+      ["c", "f"],
+      ["f", "d"],
     ]);
-    const outVertices = graph.getOutVertices(getVertex('a') as GraphVertex);
-    expect(verticesLabel(outVertices)).toEqual(['b', 'c', 'd']);
+    const outVertices = graph.getOutVertices(getVertex("a") as GraphVertex);
+    expect(verticesLabel(outVertices)).toEqual(["b", "c", "d"]);
   });
 
   it('"getOutEdges" return vertex neighbor edges', () => {
     const { graph, getVertex } = createGraph([
-      ['a', 'b'],
-      ['a', 'c'],
-      ['a', 'd'],
-      ['b', 'e'],
-      ['c', 'f'],
-      ['f', 'd'],
+      ["a", "b"],
+      ["a", "c"],
+      ["a", "d"],
+      ["b", "e"],
+      ["c", "f"],
+      ["f", "d"],
     ]);
-    const outEdges = graph.getOutEdges(getVertex('d') as GraphVertex);
-    expect(edgesLabel(outEdges)).toEqual([['a', 'd'], ['d', 'f']]);
+    const outEdges = graph.getOutEdges(getVertex("d") as GraphVertex);
+    expect(edgesLabel(outEdges)).toEqual([
+      ["a", "d"],
+      ["d", "f"],
+    ]);
   });
-
 });
