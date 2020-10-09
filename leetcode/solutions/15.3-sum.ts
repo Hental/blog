@@ -37,7 +37,7 @@ function threeSum(nums: number[]): number[][] {
         const result = [num, rest, item];
         results.push(result);
 
-        while (j < nums.length && nums[j + 1] === num) {
+        while (j < nums.length && nums[j + 1] === item) {
           j++;
         }
       }
@@ -54,16 +54,16 @@ function threeSum(nums: number[]): number[][] {
 describe('15.3-sum', () => {
 
   it('exist twice', () => {
-    expect([-2, 0, 0, 2, 2]).toEqual([[-2, 0, 2]]);
+    expect(threeSum([-2, 0, 0, 2, 2])).toEqual([[-2, 0, 2]]);
   });
 
   it('solution', () => {
-    expect([-1,0,1,2,-1,-4]).toEqual([[-1,-1,2],[-1,0,1]]);
+    expect(threeSum([-1,0,1,2,-1,-4])).toEqual([[-1,-1,2],[-1,0,1]]);
   });
 
   it('return empty if no num', () => {
-    expect([]).toEqual([]);
-    expect([0]).toEqual([]);
+    expect(threeSum([])).toEqual([]);
+    expect(threeSum([0])).toEqual([]);
   });
 });
 
