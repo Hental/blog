@@ -261,7 +261,7 @@ storybook 有着丰富的插件生态，下面主要介绍下主要使用的插�
   - [@storybook/addon-actions](https://github.com/storybookjs/storybook/tree/next/addons/actions): 记录组件的事件。
   - [@storybook/addon-backgrounds](https://github.com/storybookjs/storybook/tree/next/addons/backgrounds): 修改预览区域的背景色
   - [@storybook/addon-controls](https://github.com/storybookjs/storybook/tree/next/addons/controls): 实时，动态的修改 story 的 Args
-  - [@storybook/addon-docs](https://github.com/storybookjs/storybook/tree/next/addons/docs):
+  - [@storybook/addon-docs](https://github.com/storybookjs/storybook/tree/next/addons/docs): 自动生成一个简单的文档，同时支持手动编写 MDX 格式的文档。
   - [@storybook/addon-viewport](https://github.com/storybookjs/storybook/tree/next/addons/viewport): 修改预览区域的大小，方便查看移动端组件的渲染展示。
   - [@storybook/addon-toolbars](https://github.com/storybookjs/storybook/tree/next/addons/toolbars): 在 toolbar 增加自定义的 tool，用来配置全局变量。
 
