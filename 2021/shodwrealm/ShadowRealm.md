@@ -20,7 +20,7 @@ console.log(result); // 2
  * export const bar = () => 'foobar';
  **/
 const bar = realm.import('path/to/foo.js', 'bar');
-bar(); // foobar 
+bar(); // foobar
 ```
 
 ### 和 eval 的区别是什么
@@ -29,11 +29,19 @@ bar(); // foobar
 
 2. 有限制的访问。eval 没有限制和检查，能访问所有可以访问的 Api，但是 ShadowRealm 和 worker 类似，没有 DOM 对象，只能访问 ECMAScript 提供的 api。
 
+### 和 iframe 的区别
+
+> ShadowRealms execute code with the same JavaScript heap as the surrounding context where the ShadowRealm is created. Code runs synchronously in the same thread.
+
+ShadowRealm 比 iframe 更轻量。ShadowRealm 执行的代码是在同一个 JavaScript 堆上，而 iframe 设计初衷是提供一个完整的 DOM 环境。在需要执行第三方代码的时候，比如建站 DSL 里面执行 state 表达式的时候使用这个 api 更好用。
+
 ## 如何实现一个 shim
 
 仓库地址：[Agoric/realms-shim](https://github.com/Agoric/realms-shim)
 
 > 由于提案有变动，这个仓库实现的 api 和提案的 api 并不一致，仅参考下实现思路
+
+> api 需要由浏览器实现，shim 的实现只是保证 api 一致，实现的方式仍然采用 iframe 的方式
 
 ### 1. 生成一个独立的 JavaScript 运行时上下文
 
@@ -121,7 +129,7 @@ function buildScopeHandler(
   safeGlobal,
 ) {
   const { unsafeGlobal, unsafeEval } = unsafeRec;
-  
+
   const scopeHandler = {
     get(_, prop) {
       // 标记使用了 eval 函数
@@ -168,14 +176,14 @@ function createEvalFactory(unsafeRec, safeGlobal) {
     const scopeProxyRevocable = Proxy.revocable({}, scopeHandler);
     // 绑定 proxy handlers 到 scopedEvaluatorFactory 的 with 上下文上
     const scopeEvaluator = Reflect.apply(scopedEvaluatorFactory, safeGlobal, [scopeProxyRevocable.proxy]);
-    
+
     try {
       // eval code
       return Reflect.apply(scopeEvaluator, safeGlobal, [code]);
     } catch (e) {
       throw e;
     }
-  } 
+  }
 
   return factory;
 }
@@ -205,7 +213,7 @@ function applyTransform(sourceText, transforms) {
   let output = sourceText;
 
   output = transforms.reduce((ctx, acc) => {
-    // 依次电影 transform，传入 sourceText 
+    // 依次电影 transform，传入 sourceText
     return acc(ctx) || ctx;
   }, output);
 
@@ -221,11 +229,11 @@ function valid(sourceText) {
 
 ```js
 function initShadowRealm() {
-  const unsafeGlobal = getUnsafeGlobalFromIframe(); 
+  const unsafeGlobal = getUnsafeGlobalFromIframe();
   const safeGlobal = createSafeGlobalThis(unsafeGlobal);
-  const unsafeRec = createUnsafeRec(unsafeGlobal); 
+  const unsafeRec = createUnsafeRec(unsafeGlobal);
   const evaluate = createEvalFactory(unsafeRec, safeGlobal);
-  
+
   return {
     evaluate,
   }
@@ -236,8 +244,8 @@ function createRealm(BaseRealm) {
 
   class ShadowRealm {
     #evaluate;
-    #modules; 
-    
+    #modules;
+
     constructor() {
       this.#evaluate = initShadowRealm().evaluate;
       this.#modules = {};
@@ -263,12 +271,6 @@ const ShadowRealm = createRealm({
 
 window.ShadowRealm = ShadowRealm;
 ```
-
-## 和 iframe 的区别
-
-> ShadowRealms execute code with the same JavaScript heap as the surrounding context where the ShadowRealm is created. Code runs synchronously in the same thread.
-
-ShadowRealm 比 iframe 更轻量。ShadowRealm 执行的代码是在同一个 JavaScript 堆上，而 iframe 设计初衷是提供一个完整的 DOM 环境。在需要执行第三方代码的时候，比如建站 DSL 里面执行 state 表达式的时候使用这个 api 更好用。
 
 ## 其他提案: [Error Cause](https://github.com/tc39/proposal-error-cause)
 
