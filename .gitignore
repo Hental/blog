@@ -7,6 +7,5 @@ node_modules/
 dist/
 lib/
 es/
-*.js
 !jest.config.js
 !.eslintrc.js
