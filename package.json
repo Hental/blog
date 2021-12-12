@@ -6,16 +6,16 @@
   "author": "tao.liu",
   "license": "MIT",
   "devDependencies": {
-    "@types/faker": "^4.1.12",
-    "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.27",
+    "@types/faker": "^5.5.9",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.2",
     "eslint": "^7.10.0",
-    "faker": "^4.1.0",
-    "jest": "^26.5.0",
-    "ts-jest": "^26.4.1",
-    "typescript": "^4.1.0-beta"
+    "faker": "^5.5.3",
+    "jest": "^27.4.4",
+    "ts-jest": "^27.1.1",
+    "typescript": "^4.5.2"
   },
   "scripts": {
-    "test": "jest"
+    "leetcode:test": "jest"
   }
 }

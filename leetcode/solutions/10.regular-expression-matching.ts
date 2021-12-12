@@ -37,7 +37,6 @@ function isMatch(input: string, pattern: string): boolean {
     }
   }
 
-  console.log(dp);
   return !!dp[input.length][pattern.length];
 }
 
