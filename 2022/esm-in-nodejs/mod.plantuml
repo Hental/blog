@@ -1,0 +1,48 @@
+@startuml cjs
+
+title cjs
+
+start
+
+:resolveFilepath\n查找文件路径;
+:parse extension;
+
+switch (extension)
+case ( .js )
+  :readfile;
+  :wrap to function;
+  :vm.compileFunction\n注入 __filename, __dirname,\n      require, exports;
+case ( .json )
+  :readfile;
+  :JSON.parse();
+endswitch
+
+@enduml
+
+@startuml esm
+
+title esm;
+
+:await parse and resolve url;
+:得到 format 和 source;
+
+switch (format)
+case ( esm )
+  :new ModuleWrap;
+  :register import hook;
+case ( commonjs )
+  :readfile;
+  :lexer parse exportNames;
+  :new ModuleWrap;
+  :cjs module load;
+  :手动 set exports;
+case ( json )
+  :readfile;
+  :JSON.parse();
+  :new ModuleWrap\n只有 default export;
+endswitch
+:await moduleWrap Link;
+:await moduleWrap Evaluate;
+stop
+
+@enduml
